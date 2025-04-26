@@ -1,0 +1,11 @@
+{
+    "require": {
+        "linecorp/line-bot-sdk": "3.11",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "YourNamespace\\": "src/"
+        }
+    }
+}
