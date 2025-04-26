@@ -46,14 +46,13 @@ PHP, MySQL(XAMPP), LINE Messaging APIを使用して、**推しからLINEが来�
 ## 2. 環境
 - Windows11 Home
 - PHP, MySQLはXAMPPを使用
-| 言語・使用ツール | バージョン |
-| :-------------- | :-------- |
-| PHP             | 8.2.12    |
-| line-bot-sdk-php| 3.11      |
-| XAMPP           | 3.3.0     |
-| Apache          | 2.4.58    |
-| ngrok           | 3.22.1    |
-
+| 言語・使用ツール    | バージョン |
+| :-----------------: | :--------: |
+| PHP                 | 8.2.12     |
+| line-bot-sdk-php    | 3.11       |
+| XAMPP               | 3.3.0      |
+| Apache              | 2.4.58     |
+| ngrok               | 3.22.1     |
 ※その他のパッケージのバージョンについては、composer.jsonやcomposer.lockをご参照ください。
 
 
