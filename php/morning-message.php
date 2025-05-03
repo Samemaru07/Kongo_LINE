@@ -11,9 +11,9 @@ try {
 
 
 // LINE接続
-$channelAccessToken = "ljPT6qc82dERXpGMm/WD7rClnDsfwl59Vz0IZDR909QrsKRsvEPcwPIvyen5I3byXs9b6ym0OhZw25b5gSPbiuto4u3XaYIj0yC48JgSLhIL7spdjskkSLQfYUjn+euGsdRJTz1GjHK1AhbFTuufVAdB04t89/1O/w1cDnyilFU=";
-$channelSecret = "03a9bebe0aeb286c394af3761b877566";
-$userId = "Ucdae0a774d5085c3991e83baf678b508";
+$channelAccessToken = "AJTWayJmffmMSNugwMIOS1zu+7s+a3Q/Pnp7eSDQpmsgYUOTXqUsKZ0tWPY1gf7wHhOp+Zxu7HPC+bJ7RjbY9m77wTEY193K3RjnCe4AVOVHwWmZ+WHx2s0M3wd6s0Me/gFs8awSmar0j8agEo6J8AdB04t89/1O/w1cDnyilFU=";
+$channelSecret = "ec792159c90768f8905e50732962006b";
+$userId = "U314c810c6ed300f7100bc0e619c7dcfc";
 
 require_once("C:/xampp/htdocs/kongo/vendor/autoload.php");
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
