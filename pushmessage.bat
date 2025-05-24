@@ -1,8 +1,5 @@
 @echo off
 
-@REM 変数の値の変化をリアルタイムで反映する機能をONにする
-setlocal enabledelayedexpansion
-
 :: MySQLを起動する
 start "" "C:\xampp\mysql_start.bat"
 timeout /t 10 /nobreak >nul
@@ -62,7 +59,6 @@ if /I "%today%" == "月" (
     goto holiday
 )
 
-@REM :<ラベル> : `call :<ラベル名>`でその場所にジャンプして実行できる
 :weekday_morning
 php -f C:/xampp/htdocs/kongo/php/morning-message.php
 echo "morning-message.phpを実行したよ"

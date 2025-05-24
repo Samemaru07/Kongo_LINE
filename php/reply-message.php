@@ -15,9 +15,9 @@ use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 
-$channelAccessToken = "AJTWayJmffmMSNugwMIOS1zu+7s+a3Q/Pnp7eSDQpmsgYUOTXqUsKZ0tWPY1gf7wHhOp+Zxu7HPC+bJ7RjbY9m77wTEY193K3RjnCe4AVOVHwWmZ+WHx2s0M3wd6s0Me/gFs8awSmar0j8agEo6J8AdB04t89/1O/w1cDnyilFU=";
-$channelSecret = "ec792159c90768f8905e50732962006b";
-$userId = "U314c810c6ed300f7100bc0e619c7dcfc";
+$channelAccessToken = "";
+$channelSecret = "";
+$userId = "";
 
 $httpClient = new CurlHTTPClient($channelAccessToken);
 $bot = new LINEBot($httpClient, ["channelSecret" => $channelSecret]);
@@ -58,6 +58,7 @@ if ($fromUserMessageObject["type"] == "message" && $fromUserMessageObject["messa
 
         $textMessageBuilder = new TextMessageBuilder($todayMessage);
         $bot->pushMessage($userId, $textMessageBuilder);
+
         // 好きだといわれた場合の処理
     } elseif (str_contains($fromUserMessage, "好き") || str_contains($fromUserMessage, "愛して")) {
         $sql = "SELECT message FROM love_message WHERE id=:id";
@@ -72,6 +73,7 @@ if ($fromUserMessageObject["type"] == "message" && $fromUserMessageObject["messa
         $textMessageBuilder = new TextMessageBuilder($todayMessage);
         $bot->pushMessage($userId, $textMessageBuilder);
 
+        // 会いたい場合
     } elseif (str_contains($fromUserMessage, "会いたい") || str_contains($fromUserMessage, "帰りたい")) {
         $sql = "SELECT message FROM imissyou_message WHERE id=:id";
         $stmt = $pdo->prepare($sql);
@@ -90,12 +92,8 @@ if ($fromUserMessageObject["type"] == "message" && $fromUserMessageObject["messa
     }
 } else {
     // エラーハンドリング
-    $textMessageBuilder = new TextMessageBuilder("動作しないヨ");
-    $ot->pushMessage($userId, $textMessageBuilder);
-
     $textMessageBuilder = new TextMessageBuilder($errorMessage);
     $bot->pushMessage($userId, $textMessageBuilder);
-
-    exit;
+    exit();
 }
 ?>
